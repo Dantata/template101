@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-
 # todo: 
 #	change the tkinter import not to use *
 #	clean up the code
@@ -8,10 +7,9 @@
 import pyautogui
 import os
 from tkinter import *
-import pyperclip
 
 # setting up the templates directory and obtaining a list of the files in it
-destdir = 'templates/'
+destdir = '/home/dantata/python/template101/templates/'
 files = [ f for f in os.listdir(destdir) if os.path.isfile(os.path.join(destdir,f)) ]
 
 master = Tk()
@@ -22,11 +20,11 @@ def paste_selection(value):
     f = open(destdir + value, 'r')
     file_contents = f.read()
 
-    #pyautogui.click(100, 100); pyautogui.typewrite(file_contents)
-    pyperclip.copy(file_contents)
+    pyautogui.hotkey('alt','tab')
+    pyautogui.typewrite(file_contents)
 
-    #print (file_contents)
     f.close()
+    #sys.exit()
 
 
 variable = StringVar(master)
@@ -34,5 +32,6 @@ variable.set("Click me!") # default value
 
 w = OptionMenu(master, variable, *files,command=paste_selection)
 w.pack()
+
 
 mainloop()
