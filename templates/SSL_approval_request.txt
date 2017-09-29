@@ -1,0 +1,5 @@
+We started the SSL generation process. The approval email will be sent to:
+
+@
+
+Please make sure that you will approve the certificate. We will install it on the account when the certificate authority issues it.
