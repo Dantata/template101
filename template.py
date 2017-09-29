@@ -8,6 +8,7 @@
 import pyautogui
 import os
 from tkinter import *
+import pyperclip
 
 # setting up the templates directory and obtaining a list of the files in it
 destdir = 'templates/'
@@ -21,7 +22,8 @@ def paste_selection(value):
     f = open(destdir + value, 'r')
     file_contents = f.read()
 
-    pyautogui.click(100, 100); pyautogui.typewrite(file_contents)
+    #pyautogui.click(100, 100); pyautogui.typewrite(file_contents)
+    pyperclip.copy(file_contents)
 
     #print (file_contents)
     f.close()
